@@ -24,7 +24,9 @@
 
 ;; NOTE: Getting symbols working required to install Nerd Fonts in Emacs by doing
 ;; M-x nerd-icons-install-fonts
-(setq doom-font (font-spec :family "Fira Code" :size 13 :weight 'semi-light)
+(setq doom-font (font-spec :family "Fira Code" :size 13 )
+      doom-serif-font (font-spec :family "GoMono Nerd Font" :size 13)
+      doom-symbol-font (font-spec :family "FiraCode Nerd Font Mono" :size 13 )
       doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
