@@ -3,6 +3,15 @@
 
 ;; Markdown configuration
 ;; Mainly enables use of marksman as the LSP server via eglot
+(use-package! markdown-mode
+  :defer t
+  :init
+  (setq markdown-header-scaling t))
+
+(after! markdown-mode
+;;  This overrides Doom color themes setting :inherit to bold
+ (set-face-attribute 'markdown-header-face nil :weight 'bold
+                     :inherit 'variable-pitch))
 
 (defun config-eglot-markdown ()
   (add-hook 'markdown-mode-local-vars-hook #'lsp!)
