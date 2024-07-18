@@ -2,18 +2,18 @@
 
 
 ;; Markdown configuration
-;; Mainly enables use of marksman as the LSP server via eglot
-(use-package! markdown-mode
-  :defer t
-  :init
-  (setq markdown-header-scaling t))
-
 (after! markdown-mode
-;;  This overrides Doom color themes setting :inherit to bold
- (set-face-attribute 'markdown-header-face nil :weight 'bold
-                     :inherit 'variable-pitch))
 
-(defun config-eglot-markdown ()
+  ;; Enable header scaling and explicitly update the faces
+  (setq markdown-header-scaling t)
+  (markdown-update-header-faces t)
+
+  ;;  This overrides Doom color themes that set :inherit to bold
+  (set-face-attribute 'markdown-header-face nil :weight 'bold
+                      :inherit 'variable-pitch)
+
+  ;; Turn on LSP (via Eglot) for Markdown
+  ;; Eglot is already configured to use Marksman as the server
   (add-hook 'markdown-mode-local-vars-hook #'lsp!)
   (add-hook 'markdown-mode-hook 'turn-on-auto-fill)
 
@@ -21,6 +21,7 @@
   (map! :map markdown-mode-map
         :localleader
         "f" #'fill-paragraph ))
+
 
 ;; TypeScript configuration
 
@@ -37,5 +38,4 @@
           :lint t)))
 
 (after! eglot
-  (config-eglot-markdown)
   (config-eglot-typescript))
