@@ -15,7 +15,12 @@
 
 (defun config-eglot-markdown ()
   (add-hook 'markdown-mode-local-vars-hook #'lsp!)
-  (add-hook 'markdown-mode-hook 'turn-on-auto-fill))
+  (add-hook 'markdown-mode-hook 'turn-on-auto-fill)
+
+  ;; Bind fill-paragraph to something easier
+  (map! :map markdown-mode-map
+        :localleader
+        "f" #'fill-paragraph ))
 
 ;; TypeScript configuration
 
