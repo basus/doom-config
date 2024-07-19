@@ -39,3 +39,5 @@
 
 (after! eglot
   (config-eglot-typescript))
+
+(setq nxml-slash-auto-complete-flag t)
