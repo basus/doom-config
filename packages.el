@@ -48,3 +48,9 @@
 ;; (unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
+
+(package! nginx-mode)
+
+;; Use the catpuccin theme in the Macchiato variant
+;;
+(package! catppuccin-theme)
