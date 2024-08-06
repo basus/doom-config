@@ -41,3 +41,4 @@
   (config-eglot-typescript))
 
 (setq nxml-slash-auto-complete-flag t)
+(add-to-list 'auto-mode-alist '("\\.vto\\'" . web-mode))
