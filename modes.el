@@ -40,5 +40,10 @@
 (after! eglot
   (config-eglot-typescript))
 
-(setq nxml-slash-auto-complete-flag t)
-(add-to-list 'auto-mode-alist '("\\.vto\\'" . web-mode))
+;; Web-mode configuration, mainly for use with Vento files. Check the
+;; keybindings file as well.
+(after! web-mode
+  (setq nxml-slash-auto-complete-flag t)
+  (add-to-list 'auto-mode-alist '("\\.vto\\'" . web-mode))
+  (add-hook! web-mode
+    (setq auto-fill-mode t)))
