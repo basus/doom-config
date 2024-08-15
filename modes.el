@@ -47,3 +47,7 @@
   (add-to-list 'auto-mode-alist '("\\.vto\\'" . web-mode))
   (add-hook! web-mode
     (setq auto-fill-mode t)))
+
+;; Treemacs configuration
+(after! treemacs
+  (treemacs-project-follow-mode))
