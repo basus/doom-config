@@ -51,6 +51,9 @@
 ;; Hitting TAB always indents, doesn't insert an actual tab character
 (setq-default tab-always-indent t)
 
+;; Increase the flycheck popup delay so that it doesn't interfere with setting marks
+(setq flycheck-display-errors-delay 0.5)
+
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
