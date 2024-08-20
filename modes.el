@@ -44,9 +44,9 @@
 ;; keybindings file as well.
 (after! web-mode
   (setq nxml-slash-auto-complete-flag t)
-  (add-to-list 'auto-mode-alist '("\\.vto\\'" . web-mode))
-  (add-hook! web-mode
-    (setq auto-fill-mode t)))
+  (add-hook! web-mode #'auto-fill-mode))
+
+(add-to-list 'auto-mode-alist '("\\.vto\\'" . web-mode))
 
 ;; Treemacs configuration
 (after! treemacs

@@ -50,7 +50,4 @@
 ;; (unpin! t)
 
 (package! nginx-mode)
-
-;; Use the catpuccin theme in the Macchiato variant
-;;
-(package! catppuccin-theme)
+(package! catppuccin-theme)           ;; Use the catppuccin theme
