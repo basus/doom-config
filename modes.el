@@ -51,3 +51,25 @@
 ;; Treemacs configuration
 (after! treemacs
   (treemacs-project-follow-mode))
+
+;; LaTeX configuration using auctex
+(after! auctex
+
+  (setq
+   LaTeX-indent-environment-check nil
+   LaTeX-indent-level 0
+   TeX-PDF-mode   t
+   TeX-auto-save  t
+   TeX-parse-self t
+   TeX-brace-indent-level 0
+   TeX-master nil
+   TeX-engine 'luatex
+   TeX-source-correlate-mode t
+   TeX-source-correlate-start-server t
+   TeX-source-correlate-method 'synctex)
+
+  (defun latex-custom ()
+    (auto-fill-mode)
+    (latex-math-mode))
+
+  (add-hook 'LaTeX-mode-hook 'latex-custom))
