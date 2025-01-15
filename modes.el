@@ -5,12 +5,18 @@
 (after! markdown-mode
 
   ;; Enable header scaling and explicitly update the faces
-  (setq markdown-header-scaling t)
-  (markdown-update-header-faces t)
 
   ;;  This overrides Doom color themes that set :inherit to bold
-  (set-face-attribute 'markdown-header-face nil :weight 'bold
-                      :inherit 'variable-pitch)
+  (custom-theme-set-faces! nil
+    '(markdown-header-face :weight bold :inherit variable-pitch)
+    '(markdown-header-face-1 :inherit markdown-header-face)
+    '(markdown-header-face-2 :inherit markdown-header-face)
+    '(markdown-header-face-3 :inherit markdown-header-face)
+    '(markdown-header-face-4 :inherit markdown-header-face)
+    '(markdown-header-face-5 :inherit markdown-header-face))
+
+  (setq markdown-header-scaling t)
+  (markdown-update-header-faces t)
 
   ;; Turn on LSP (via Eglot) for Markdown
   ;; Eglot is already configured to use Marksman as the server
