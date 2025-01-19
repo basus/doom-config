@@ -79,3 +79,10 @@
     (latex-math-mode))
 
   (add-hook 'LaTeX-mode-hook 'latex-custom))
+
+
+;; Fennel configuration
+(autoload 'fennel-mode "~/Public/fennel/emacs-mode.el" nil t)
+(add-to-list 'auto-mode-alist '("\\.fnl\\'" . fennel-mode))
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs '(fennel-mode . ("fennel-ls"))))
