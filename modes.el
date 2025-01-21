@@ -86,3 +86,8 @@
 (add-to-list 'auto-mode-alist '("\\.fnl\\'" . fennel-mode))
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs '(fennel-mode . ("fennel-ls"))))
+
+;; Rust configuration
+(after! rustic
+  (setq
+   rustic-compile-directory-method 'rustic-buffer-workspace))

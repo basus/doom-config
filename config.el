@@ -91,3 +91,6 @@
 
 ;; Load custom keybindings
 (load! "keybindings.el")
+
+;; Tame eldoc popups
+(set-popup-rule! "^\\*eldoc" :side 'bottom :size 0.4 :quit 'other)
