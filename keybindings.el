@@ -1,13 +1,33 @@
 ;;; ../src/doom-config/keybindings.el -*- lexical-binding: t; -*-
 
-;; These are keybindings that do not neatly fall under any mode.
-;; Most of these replicate Spacemacs keybindings
-(map! :leader
-      :desc "Clear search highlights"
-      "s c" #'evil-ex-nohighlight)
+;; Use comma (,) as the localleader key
+(setq evil-snipe-override-evil-repeat-keys nil)
+(setq doom-localleader-key ",")
+(setq doom-localleader-alt-key "M-,")
 
+;; TODO: Not sure how to avoid repetition because map! is a macro, so can't just
+;; use `apply' with the arguments in a list.
 ;; This makes fill-paragraph somewhat usable in web-mode, sometimes.
 (map! :map web-mode-map
       (:localleader
        :desc "Fill paragraph" "f"
        (lambda () (interactive) (mark-paragraph) (fill-paragraph) )))
+
+(map!
+ ;; Better movement bindings
+ :desc "Go to start of line"    :nmv "H" #'evil-first-non-blank
+ :desc "Go to bottom of window" :nmv "J" #'evil-window-bottom
+ :desc "Go to top of window"    :nmv "K" #'evil-window-top
+ :desc "Go to end of line"      :nmv "L" #'evil-last-non-blank
+
+ ;; More useful bindings
+ :desc "Redo"  "U"              :nmv #'evil-redo
+ :desc "Join"  "C-j"            :nmv #'evil-join )
+
+;; Miscellaneous other keybindings
+(map! :leader
+      :desc "Clear search highlights" "s c" #'evil-ex-nohighlight
+      :desc "Delete other windows"    "w D" #'delete-other-windows
+
+      (:prefix "c" (:when (modulep! :tools lsp +eglot)
+        :desc "Help at point" "h" #'eldoc)))
