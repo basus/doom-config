@@ -21,8 +21,8 @@
  :desc "Go to end of line"      :nmv "L" #'evil-last-non-blank
 
  ;; More useful bindings
- :desc "Redo"  "U"              :nmv #'evil-redo
- :desc "Join"  "C-j"            :nmv #'evil-join )
+ :desc "Redo"                   :nmv "U"   #'evil-redo
+ :desc "Join"                   :nmv "C-j" #'evil-join )
 
 ;; Miscellaneous other keybindings
 (map! :leader
