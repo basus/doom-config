@@ -94,3 +94,8 @@
 
 ;; Tame eldoc popups
 (set-popup-rule! "^\\*eldoc" :side 'bottom :size 0.4 :quit 'other)
+
+(defun now ()
+  "Insert the current date and time in ISO 8601 compliant manner"
+  (interactive)
+  (insert (format-time-string "%Y-%m-%dT%H:%M:%S%:z")))
