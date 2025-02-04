@@ -22,7 +22,12 @@
 
  ;; More useful bindings
  :desc "Redo"                   :nmv "U"   #'evil-redo
- :desc "Join"                   :nmv "C-j" #'evil-join )
+ :desc "Join"                   :nmv "C-j" #'evil-join
+
+ ;; For some reason this doesn't seem to bound by default
+ :desc "Yasnippet expand"       :ni  "C-'" #'yas-expand
+
+)
 
 ;; Miscellaneous other keybindings
 (map! :leader

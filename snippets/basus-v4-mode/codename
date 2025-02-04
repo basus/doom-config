@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: codename
+# key: cn
+# group: spans
+# contributor: Shrutarshi Basu
+# --
+<span class="codename">$1</span> $0

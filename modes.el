@@ -21,7 +21,11 @@
   ;; Turn on LSP (via Eglot) for Markdown
   ;; Eglot is already configured to use Marksman as the server
   (add-hook 'markdown-mode-local-vars-hook #'lsp!)
-  (add-hook 'markdown-mode-hook 'turn-on-auto-fill)
+
+  (add-hook! 'markdown-mode-hook
+             #'turn-on-auto-fill
+             (yas-activate-extra-mode 'nxml-mode)
+             (yas-activate-extra-mode 'basus-v4-mode))
 
   ;; Bind fill-paragraph to something easier
   (map! :map markdown-mode-map

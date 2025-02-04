@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: program
+# key: pgm
+# group: spans
+# contributor: Shrutarshi Basu
+# --
+<span class="program">$1</span> $0

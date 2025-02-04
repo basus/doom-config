@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: sidenote
+# key: sn
+# contributor: Shrutarshi Basu
+# --
+<aside class="sidenote">$1</aside>$0
