@@ -54,7 +54,10 @@
 ;; keybindings file as well.
 (after! web-mode
   (setq nxml-slash-auto-complete-flag t)
-  (add-hook! web-mode #'auto-fill-mode))
+  (add-hook! web-mode
+             #'auto-fill-mode
+             (setq web-mode-markup-indent-offset 2)))
+
 
 (add-to-list 'auto-mode-alist '("\\.vto\\'" . web-mode))
 
