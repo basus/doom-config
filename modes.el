@@ -37,7 +37,10 @@
 
 (defun config-eglot-typescript ()
   (add-to-list 'eglot-server-programs
-               '((js-mode typescript-mode) . (eglot-deno "deno" "lsp")))
+               `((js-mode typescript-mode) .
+                 ,(eglot-alternatives
+                   '(("deno" "lsp")
+                     ("typescript-language-server" "--stdio")))))
 
   (defclass eglot-deno (eglot-lsp-server) ()
     :documentation "A custom class for deno lsp.")
