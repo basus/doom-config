@@ -1,6 +1,5 @@
 ;;; ../src/doom-config/modes.el -*- lexical-binding: t; -*-
 
-
 ;; Markdown configuration
 (after! markdown-mode
 
@@ -34,7 +33,6 @@
 
 
 ;; TypeScript configuration
-
 (defun config-eglot-typescript ()
   (add-to-list 'eglot-server-programs
                `((js-mode typescript-mode) .
@@ -45,7 +43,7 @@
   (defclass eglot-deno (eglot-lsp-server) ()
     :documentation "A custom class for deno lsp.")
 
-  (cl-defmethod eglot-initialization-options ((server eglot-deno))
+  (cl-defmethod eglot-initialization-options ((_server eglot-deno))
     "Passes through required deno initialization options"
     (list :enable t
           :lint t)))

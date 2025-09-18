@@ -31,8 +31,11 @@
 
 ;; Miscellaneous other keybindings
 (map! :leader
+      :desc "Indent lines in region"  "I"   #'indent-region
       :desc "Clear search highlights" "s c" #'evil-ex-nohighlight
       :desc "Delete other windows"    "w D" #'delete-other-windows
 
       (:prefix "c" (:when (modulep! :tools lsp +eglot)
-        :desc "Help at point" "h" #'eldoc)))
+        :desc "Get help at point"        "h" #'eldoc
+        :desc "Visit the next error"     "n" #'flycheck-next-error
+        :desc "Visit the previous error" "p" #'flycheck-previous-error )))
