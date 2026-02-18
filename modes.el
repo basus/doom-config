@@ -115,3 +115,8 @@
                `(python-mode
                  . ,(eglot-alternatives '("pylsp"
                                           "hatch run pylsp")))))
+
+;; Racket configuration
+(use-package! racket-mode
+  :init
+  (add-to-list 'exec-path "/Applications/Racket/bin"))
