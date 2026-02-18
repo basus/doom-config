@@ -103,3 +103,15 @@
 (after! rustic
   (setq
    rustic-compile-directory-method 'rustic-buffer-workspace))
+
+;; Python configuration
+(use-package eglot
+  :ensure t
+  :defer t
+  :hook ((python-mode . eglot-ensure)
+         (go-mode . eglot-ensure))
+  :config
+  (add-to-list 'eglot-server-programs
+               `(python-mode
+                 . ,(eglot-alternatives '("pylsp"
+                                          "hatch run pylsp")))))
