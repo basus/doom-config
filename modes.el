@@ -51,6 +51,10 @@
 (after! eglot
   (config-eglot-typescript))
 
+(after! typescript-mode
+  (setq typescript-indent-level 2)
+  (setq comment-auto-fill-only-comments t))
+
 ;; Web-mode configuration, mainly for use with Vento files. Check the
 ;; keybindings file as well.
 (after! web-mode

@@ -14,6 +14,8 @@
        (lambda () (interactive) (mark-paragraph) (fill-paragraph) )))
 
 (map!
+ :desc "Return and indent"      :imv "RET" #'newline-and-indent
+ 
  ;; Better movement bindings
  :desc "Go to start of line"    :nmv "H" #'evil-first-non-blank
  :desc "Go to bottom of window" :nmv "J" #'evil-window-bottom
