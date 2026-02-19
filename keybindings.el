@@ -18,8 +18,8 @@
  
  ;; Better movement bindings
  :desc "Go to start of line"    :nmv "H" #'evil-first-non-blank
- :desc "Go to bottom of window" :nmv "J" #'evil-window-bottom
- :desc "Go to top of window"    :nmv "K" #'evil-window-top
+ :desc "Go to bottom of window" :nmv "J" #'evil-forward-paragraph
+ :desc "Go to top of window"    :nmv "K" #'evil-backward-paragraph
  :desc "Go to end of line"      :nmv "L" #'evil-last-non-blank
 
  ;; More useful bindings
